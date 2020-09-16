@@ -119,18 +119,27 @@ public class BookWord {
     private String[] GetUniqueWords()
     {
         int i = 0;
-        ArrayList<String> UniqueWords = new ArrayList<String>();
+        String[] UniqueWords = new String[0];
         for (String word:
                 words) {
             if(word != "" && word != null)
             {
-                UniqueWords.add(word);
+                AddRangeArray(UniqueWords);
+                UniqueWords[i] = word;
                 InsertWord(word,i);
                 i++;
             }
         }
         words = String_Into_Words_FromArray(this.text);
-        return UniqueWords.toArray(new String[0]);
+        return UniqueWords;
+    }
+    private String[] AddRangeArray(String[] Array1)
+    {
+        String[] Array2 = new String[Array1.length + 1];
+        for (int i = 0; i < Array1.length; i++) {
+            Array2[i] = Array1[i];
+        }
+        return Array2;
     }
     private void SetStatistic()
     {
