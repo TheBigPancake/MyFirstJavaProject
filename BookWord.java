@@ -124,7 +124,7 @@ public class BookWord {
                 words) {
             if(word != "" && word != null)
             {
-                AddRangeArray(UniqueWords);
+                UniqueWords = AddRangeArray(UniqueWords);
                 UniqueWords[i] = word;
                 InsertWord(word,i);
                 i++;
